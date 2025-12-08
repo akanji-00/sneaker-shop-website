@@ -38,28 +38,46 @@
   </head>
   <body>
     <header class="header">
-      <div class="content container">
-        <div class="left-content">
-          <img src="./images/logo.svg" alt="Sneaker logo image" />
-          <ul class="navigation">
-            <li class="navigation-list">
-              <a href="#" class="navigation-item">Collections</a>
-            </li>
-            <li class="navigation-list">
-              <a href="#" class="navigation-item">Men</a>
-            </li>
-            <li class="navigation-list">
-              <a href="#" class="navigation-item">Women</a>
-            </li>
-            <li class="navigation-list">
-              <a href="#" class="navigation-item">About</a>
-            </li>
-            <li class="navigation-list">
-              <a href="#" class="navigation-item">Contact</a>
-            </li>
-          </ul>
+      <div class="content container flex">
+        <div class="left-content flex">
+          <button class="mobile-nav-toggle" aria-controls="primary-navigation">
+            <span class="sr-only" aria-expanded="false">Menu</span>
+          </button>
+
+          <img class="logo" src="./images/logo.svg" alt="Sneaker logo image" />
+          <nav>
+            <ul class="menu-navigation flex">
+              <li class="navigation-list">
+                <a href="#" class="navigation-item">Collections</a>
+              </li>
+              <li class="navigation-list">
+                <a href="#" class="navigation-item">Men</a>
+              </li>
+              <li class="navigation-list">
+                <a href="#" class="navigation-item">Women</a>
+              </li>
+              <li class="navigation-list">
+                <a href="#" class="navigation-item">About</a>
+              </li>
+              <li class="navigation-list">
+                <a href="#" class="navigation-item">Contact</a>
+              </li>
+            </ul>
+          </nav>
         </div>
-        <div class="-righttent"></div>
+
+        <div class="-right-content flex">
+          <div class="image--modifier cart">
+            <img src="./images/icon-cart.svg" alt="Cart icon" />
+          </div>
+          <div class="image--modifier profile">
+            <img
+              class="avatar"
+              src="./images/image-avatar.png"
+              alt="Avatar icon"
+            />
+          </div>
+        </div>
       </div>
     </header>
     <main class="main">
