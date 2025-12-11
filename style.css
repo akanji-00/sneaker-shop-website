@@ -36,7 +36,7 @@
 }
 
 html {
-  font-size: clamp(14px, 1.5vw, 18px);
+  font-size: clamp(16px, 1.5vw, 18px);
 }
 
 body {
@@ -115,6 +115,14 @@ a {
   background-color: var(--clr-black);
 }
 
+.text-primary {
+  color: var(--clr-neutral-900);
+}
+
+.fw-700 {
+  font-weight: var(--fw-700);
+}
+
 .image--modifier {
   width: 20px;
   border-radius: 50%;
@@ -125,7 +133,7 @@ a {
   color: var(--clr-white);
 }
 
-.content {
+.header-content {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--clr-neutral-500);
@@ -133,24 +141,38 @@ a {
 }
 
 .logo {
-  height: 2rem;
-  aspect-ratio: 1/1;
+  width: clamp(6.25rem, 8vw + 1rem, 18.75rem);
 }
 
 .primary-navigation {
   --underline-gap: 0.5rem;
   position: fixed;
-  z-index: 1000;
-  inset: 0 0 0 30%;
+  z-index: 2000;
+  inset: 0 50% 0 0;
+  background: var(--clr-primary-100);
   list-style: none;
   padding: min(20rem, 15vh) 2rem;
   margin: 0;
   flex-direction: column;
-  transform: translateX(100%);
+  transform: translateX(0%);
   transition: transform 500ms ease-in-out;
 }
 
-.mobile-nav-toggle {
+.primary-navigation::before {
+  content: "";
+  display: block;
+  width: 100%;
+
+  inset: 0 0 0 0;
+  background: var(--clr-neutral-900);
+}
+
+/* .mobile-nav-toggle {
+  display: inline;
+  position: absolute;
+  z-index: 2000;
+  left: 2rem;
+  top: 1rem;
   background: transparent;
   background-image: url(./images/icon-menu.svg);
   background-repeat: no-repeat;
@@ -158,29 +180,15 @@ a {
   width: 1.5rem;
   aspect-ratio: 1;
   border: 0;
-}
+} */
 
 .mobile-nav-toggle[aria-expanded="true"] {
   background-image: url(./images/icon-close.svg);
 }
 
 .mobile-nav-toggle:focus-visible {
-  outline: 5px solid white;
+  outline: 5px solid black;
   outline-offset: 5px;
-}
-
-@media (min-width: 35rem) {
-  .mobile-nav-toggle {
-    display: none;
-  }
-  .primary-navigation {
-    --gap: clamp(1.5rem, 5vw, 3.5rem);
-    --underline-gap: 2rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background: hsl(var(--clr-black));
-  }
 }
 
 /* ===== Main section styles ===== */
