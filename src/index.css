@@ -1,0 +1,42 @@
+/* ================ VARIABLES ================== */
+:root {
+  --clr-primary: blue;
+}
+
+/* ================ RESETS ================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  width: 90%;
+  margin-inline: auto;
+}
