@@ -1,31 +1,29 @@
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-  position: relative;
-  background: #fff;
-
-  margin-bottom: 10rem;
-  border-bottom: 2px solid red;
-  /* gap: 1rem; */
-  /* z-index: 100; */
+.header {
+  background: white;
 }
 
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s;
-  z-index: 10;
+.header__content {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuBtn {
+  display: grid;
+  place-self: center;
+  outline: 2px solid black;
+  padding: 0.2rem;
+  z-index: 2000;
+}
+
+.menuBtn > img {
+  width: 15px;
+  aspect-ratio: 1/1;
 }
 
 .icons {
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 1rem;
 }
 
@@ -33,69 +31,50 @@
   position: relative;
 }
 
+.cart {
+  width: 20px;
+}
+
 .badge {
   position: absolute;
-  top: -20%;
-  font-weight: bold;
-  background: blue;
-  color: white;
-  padding: 0.15rem 0.5rem;
-  border-radius: 10px;
+  top: -3px;
+  background: blue; /* change to the one in the design */
+  border-radius: 5rem;
+  padding: 0.1rem 0.6rem;
   font-size: 0.5rem;
+  color: white;
 }
 
 .profile {
-  width: clamp(20px, 10vw + 1rem, 30px);
+  width: 30px;
 }
 
-.cart {
-  width: clamp(10px, 5vw + 1rem, 20px);
-}
-
-.menu {
+.nav__menu {
   position: fixed;
+  left: 0; /*change to 0 on open */
   top: 0;
-  left: -200%;
-  height: 100vh;
-  width: 75%;
-  background: white;
-  padding: 4rem 1.5rem;
-  transition: left 0.3s ease;
-  z-index: 100;
+
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
 }
-.nav__left {
+
+.nav__menu.open {
+  transform: translateX(0);
+}
+
+.nav__list {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 2rem;
+  background: red;
+  height: 100vh;
+  width: 260px;
+  padding: 7rem 2rem;
 }
 
 @media (min-width: 768px) {
-  .hamburger {
-    display: none;
-  }
-
-  .menu {
-    position: static;
-    height: auto;
-    width: auto;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-  }
-
-  .nav__left {
-    gap: 3rem;
-  }
-
-  .nav__list {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  .overlay {
+  .menuBtn {
     display: none;
   }
 }
