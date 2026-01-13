@@ -1,0 +1,165 @@
+/* header {
+  background: white;
+}
+
+.header__content {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuBtn {
+  display: grid;
+  place-self: center;
+  outline: 2px solid black;
+  padding: 0.2rem;
+  z-index: 2000;
+}
+
+.menuBtn > img {
+  width: 15px;
+  aspect-ratio: 1/1;
+}
+
+.icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.cart__btn {
+  position: relative;
+}
+
+.cart {
+  width: 20px;
+}
+
+.badge {
+  position: absolute;
+  top: -3px;
+  background: blue; 
+  border-radius: 5rem;
+  padding: 0.1rem 0.6rem;
+  font-size: 0.5rem;
+  color: white;
+}
+
+.profile {
+  width: 30px;
+}
+
+.nav__menu {
+  position: fixed;
+  left: 0; 
+  top: 0;
+
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.nav__menu.open {
+  transform: translateX(0);
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: red;
+  height: 100vh;
+  width: 260px;
+  padding: 7rem 2rem;
+}
+
+@media (min-width: 768px) {
+  .menuBtn {
+    display: none;
+  }
+} */
+
+.nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.nav__links {
+  display: none;
+}
+
+.nav__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav__list a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.nav__hamburger > img {
+  width: 15px;
+  aspect-ratio: 1/1;
+}
+
+@media (min-width: 768px) {
+  .nav__hamburger {
+    display: none;
+  }
+
+  .nav__links {
+    display: block;
+  }
+
+  .nav__list {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .mobile-menu,
+  .overlay {
+    display: none;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 70%;
+  max-width: 300px;
+  background: white;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+.mobile-menu__close {
+  width: 15px;
+  aspect-ratio: 1/1;
+  margin-bottom: 2rem;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
