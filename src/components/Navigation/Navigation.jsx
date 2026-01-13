@@ -22,31 +22,34 @@ export default function Navigation() {
   return (
     <>
       <header className="nav">
-        <div className="nav__left">
-          <button
-            className="nav__hamburger"
-            aria-label="open menu"
-            aria-expanded={isMenuOpen}
-            onClick={openMenu}
-          >
-            <img src={Hamburger} />
-          </button>
-          <span className="nav__logo">
-            <img src={Logo} alt="Sneaker Logo" />
-          </span>
-        </div>
+        <div className="nav__container">
+          <div className="nav__left">
+            <button
+              className="nav__hamburger"
+              aria-label="open menu"
+              aria-expanded={isMenuOpen}
+              onClick={openMenu}
+            >
+              <img src={Hamburger} />
+            </button>
+            <span className="nav__logo">
+              <img src={Logo} alt="Sneaker Logo" />
+            </span>
 
-        <nav className="nav__links">
-          <NavLinks />
-        </nav>
+            <nav className="nav__links">
+              <NavLinks />
+            </nav>
+          </div>
 
-        <div className="nav__right">
-          <button aria-label="Cart">
-            <img src={Cart} alt="Cart" />
-          </button>
-          <button aria-label="Profile">
-            <img src={Profile} alt="Profile" />
-          </button>
+          <div className="nav__right">
+            <button className="nav__cart" aria-label="Cart">
+              <img src={Cart} alt="Cart" />
+              <span className="cart-counter">0</span>
+            </button>
+            <button className="nav__profile" aria-label="Profile">
+              <img src={Profile} alt="Profile" />
+            </button>
+          </div>
         </div>
       </header>
 

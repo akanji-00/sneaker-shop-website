@@ -34,29 +34,12 @@ button {
   border: none;
   background: none;
   outline: none;
-}
-
-.flex {
-  display: flex;
+  cursor: pointer;
 }
 
 .container {
   width: 100%;
+  max-width: 1200px;
   padding-inline: var(--page-padding);
-  /* margin-inline: auto; */
-}
-
-.header__container {
-  /* height: 100px; */
-  padding-block: clamp(1rem, 3vw, 3rem);
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-@media (min-width: 768px) {
-  .header__container {
-    border-bottom: 2px solid blue;
-  }
+  margin-inline: auto;
 }
