@@ -4,7 +4,7 @@
 }
 
 .nav__container {
-  height: 100px;
+  height: 70px;
   width: 100%;
   max-width: 1024px;
   padding-block: clamp(1rem, 3vw, 3rem);
@@ -125,7 +125,7 @@
   font-size: 0.5rem;
   color: white;
   font-weight: 700;
-  display: none;
+  /* display: none; */
 }
 
 @media (min-width: 768px) {
@@ -169,7 +169,7 @@
 
     background-color: red;
 
-    bottom: -40px;
+    bottom: -30px;
     opacity: 0;
     transform: scaleX(0);
     transform-origin: center;

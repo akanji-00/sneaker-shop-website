@@ -1,11 +1,12 @@
 import { useState } from "react";
 import NavLinks from "./NavLinks";
 import MobileMenu from "./MobileMenu";
+import NavCart from "./NavCart";
 import "./navigation.css";
 
 import Hamburger from "../../assets/images/icon-menu.svg";
 import Logo from "../../assets/images/logo.svg";
-import Cart from "../../assets/images/icon-cart.svg";
+
 import Profile from "../../assets/images/image-avatar.png";
 
 export default function Navigation() {
@@ -42,10 +43,7 @@ export default function Navigation() {
           </div>
 
           <div className="nav__right">
-            <button className="nav__cart" aria-label="Cart">
-              <img src={Cart} alt="Cart" />
-              <span className="cart-counter">0</span>
-            </button>
+            <NavCart />
             <button className="nav__profile" aria-label="Profile">
               <img src={Profile} alt="Profile" />
             </button>
