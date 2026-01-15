@@ -1,13 +1,41 @@
-// import { useState } from "react";
+import { useState } from "react";
 import "./index.css";
 import Navigation from "./components/Navigation/Navigation";
 import Hero from "./components/Hero/Hero";
+import CartModal from "./components/Cart/CartModal";
 
 export default function App() {
+  const [cartQty, setCartQty] = useState(0);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  function addToCart(qty) {
+    if (qty === 0) return;
+    setCartQty(qty);
+  }
+
+  function clearCart() {
+    setCartQty(0);
+    setIsCartOpen(false);
+  }
+
+  const cartModal = (
+    <CartModal
+      cartQty={cartQty}
+      onDelete={() => setCartQty(0)}
+      onCheckout={clearCart}
+    />
+  );
+
   return (
     <>
-      <Navigation />
-      <Hero />
+      <Navigation
+        cartQty={cartQty}
+        isCartOpen={isCartOpen}
+        onCartToggle={() => setIsCartOpen((p) => !p)}
+        cartModal={cartModal}
+      />
+
+      <Hero onAddToCart={addToCart} />
     </>
   );
 }

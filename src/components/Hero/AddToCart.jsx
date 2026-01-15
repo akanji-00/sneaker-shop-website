@@ -1,15 +1,11 @@
 // import { useState } from "react";
 import CartIcon from "../../assets/images/icon-cart.svg";
 
-export default function AddToCart({ CartQuantity }) {
+export default function AddToCart({ onClick, qty }) {
   return (
-    <div className="add-to-cart-button-container">
-      <button className="add-to-cart-btn">
-        <span className="cart-icon">
-          <img src={CartIcon} alt="Cart" />
-        </span>
-        <span className="add-to-cart-text">Add to cart</span>
-      </button>
-    </div>
+    <button onClick={onClick} className="add-to-cart-btn" disabled={qty === 0}>
+      <img src={CartIcon} alt="Cart" />
+      Add to cart
+    </button>
   );
 }

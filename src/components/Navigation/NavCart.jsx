@@ -1,9 +1,9 @@
 import Cart from "../../assets/images/icon-cart.svg";
-export default function NavCart() {
+export default function NavCart({ cartQty, onClick }) {
   return (
-    <button className="nav__cart" aria-label="Cart">
+    <button onClick={onClick} className="nav__cart" aria-label="Cart">
       <img src={Cart} alt="Cart" />
-      <span className="cart-counter">0</span>
+      {cartQty > 0 && <span className="cart-counter">{cartQty}</span>}
     </button>
   );
 }

@@ -1,23 +1,21 @@
-import { useState } from "react";
-
 import MinusBtn from "../../assets/images/icon-minus.svg";
 import PlusBtn from "../../assets/images/icon-plus.svg";
 
-export default function CartCounter() {
-  const [isCount, setIsCount] = useState(0);
+export default function CartCounter({ qty, setQty }) {
+  // const [isCount, setIsCount] = useState(0);
 
   function decreaseCount() {
-    setIsCount((prevCount) => {
-      if (prevCount <= 0) {
+    setQty((q) => {
+      if (q <= 0) {
         return 0;
       }
-      return prevCount - 1;
+      return q - 1;
     });
   }
 
   function increaseCount() {
-    setIsCount((prevCount) => {
-      return prevCount + 1;
+    setQty((q) => {
+      return q + 1;
     });
   }
 
@@ -30,7 +28,7 @@ export default function CartCounter() {
       >
         <img src={MinusBtn} alt="Remove" />
       </button>
-      <span className="quantity">{isCount}</span>
+      <span className="quantity">{qty}</span>
       <button
         onClick={increaseCount}
         className="increase-btn"

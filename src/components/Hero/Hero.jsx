@@ -1,47 +1,29 @@
+import { useState } from "react";
 import "./hero.css";
+import HeroImage from "./HeroImage.jsx";
+import HeroContent from "./HeroContent.jsx";
 import CartCounter from "./CartCounter.jsx";
 import AddToCart from "./AddToCart.jsx";
 
-import ShoePreview from "../../assets/images/image-product-1.jpg";
-import PreviousBtn from "../../assets/images/icon-previous.svg";
-import NextBtn from "../../assets/images/icon-next.svg";
+export default function Hero({ onAddToCart }) {
+  const [qty, setQty] = useState(0);
 
-export default function Hero() {
+  function handleAddToCart() {
+    if (qty === 0) return;
+    onAddToCart(qty);
+    setQty(0);
+  }
+
   return (
     <>
       <main className="hero">
-        <div className="img-container">
-          <img src={ShoePreview} alt="Landing shoe" />
-
-          <div className="toggleImages">
-            <button className="prevBtn" aria-label="Previous image">
-              <img src={PreviousBtn} alt="Previous" />
-            </button>
-            <button className="nextBtn" aria-label="Next image">
-              <img src={NextBtn} alt="Next" />
-            </button>
-          </div>
-        </div>
+        <HeroImage />
         <div className="content-container">
-          <h1 className="content__title">sneaker company</h1>
-          <h2 className="content__subtitle">fall limited edition sneakers</h2>
-          <p className="content__text">
-            These low-profile sneakers are your perfect casual wear companion.
-            Featuring a durable rubber outer sole, they'll withstand eveything
-            the weather can offer.
-          </p>
-
-          <div className="price-container">
-            <div className="discount__price-container">
-              <p className="content__discount-price">$125.00</p>
-              <span className="price-percentage">50%</span>
-            </div>
-            <p className="content__original-price">$250.00</p>
-          </div>
+          <HeroContent />
 
           <div className="content-button-container">
-            <CartCounter />
-            <AddToCart />
+            <CartCounter qty={qty} setQty={setQty} />
+            <AddToCart onClick={handleAddToCart} qty={qty} />
           </div>
         </div>
       </main>

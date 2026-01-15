@@ -9,7 +9,12 @@ import Logo from "../../assets/images/logo.svg";
 
 import Profile from "../../assets/images/image-avatar.png";
 
-export default function Navigation() {
+export default function Navigation({
+  cartQty,
+  onCartToggle,
+  isCartOpen,
+  cartModal,
+}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function openMenu() {
@@ -43,7 +48,10 @@ export default function Navigation() {
           </div>
 
           <div className="nav__right">
-            <NavCart />
+            <div className="cart-anchor">
+              <NavCart cartQty={cartQty} onClick={onCartToggle} />
+              {isCartOpen && cartModal}
+            </div>
             <button className="nav__profile" aria-label="Profile">
               <img src={Profile} alt="Profile" />
             </button>
