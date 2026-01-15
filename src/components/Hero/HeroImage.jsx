@@ -1,4 +1,4 @@
-import { images } from "./images";
+import dataImages from "./images";
 import ShoePreview from "../../assets/images/image-product-1.jpg";
 import PreviousBtn from "../../assets/images/icon-previous.svg";
 import NextBtn from "../../assets/images/icon-next.svg";
@@ -9,10 +9,12 @@ import Thumbnail3 from "../../assets/images/image-product-3-thumbnail.jpg";
 import Thumbnail4 from "../../assets/images/image-product-4-thumbnail.jpg";
 
 export default function HeroImage() {
+  const images = dataImages.map((image) => {
+    return image.img;
+  });
   return (
     <div className="img-container">
-      <img src={images.src[0]} alt="Landing shoe" />
-
+      <img src={images.img[0].src} alt={images[0].alt} />
       <div className="toggleImages">
         <button className="prevBtn" aria-label="Previous image">
           <img src={PreviousBtn} alt="Previous" />
