@@ -50,6 +50,8 @@
 
 .cart__text-content p {
   color: var(--clr-900);
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
 }
 
 .checkout__btn {
@@ -67,6 +69,11 @@
 
 .checkout__btn:hover {
   background: var(--clr-primary);
+}
+.delete-btn img {
+  width: 20px;
+  filter: invert(43%) sepia(11%) saturate(7493%) hue-rotate(357deg)
+    brightness(91%) contrast(85%);
 }
 
 .empty {

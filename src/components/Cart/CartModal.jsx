@@ -30,7 +30,11 @@ export default function CartModal({ cartQty, onCheckout, onDelete }) {
               </p>
             </div>
 
-            <button onClick={onDelete} aria-label="Remove item">
+            <button
+              className="delete-btn"
+              onClick={onDelete}
+              aria-label="Remove item"
+            >
               <img src={Delete} alt="Delete button" />
             </button>
           </div>
