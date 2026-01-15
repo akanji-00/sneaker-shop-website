@@ -2,7 +2,10 @@ export default function HeroContent() {
   return (
     <>
       <h1 className="content__title">sneaker company</h1>
-      <h2 className="content__subtitle">fall limited edition sneakers</h2>
+      <h2 className="content__subtitle">
+        fall limited edition <br />
+        sneakers
+      </h2>
       <p className="content__text">
         These low-profile sneakers are your perfect casual wear companion.
         Featuring a durable rubber outer sole, they'll withstand eveything the

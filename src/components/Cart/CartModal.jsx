@@ -35,7 +35,7 @@ export default function CartModal({ cartQty, onCheckout, onDelete }) {
             </button>
           </div>
 
-          <button className="checkout__btn" onClick={onCheckout}>
+          <button className="checkout__btn btn" onClick={onCheckout}>
             Checkout
           </button>
         </>

@@ -34,8 +34,8 @@
 
 .nav__list a {
   text-decoration: none;
-  color: black;
-  font-weight: 500;
+  color: var(--clr-900);
+  font-weight: 700;
 }
 
 .nav__hamburger,
@@ -52,7 +52,7 @@
 
 .nav__hamburger:focus-visible,
 .mobile-menu__close:focus-visible {
-  outline: 2px solid blue;
+  outline: 2px solid var(--clr-900);
 }
 
 .nav__hamburger > img {
@@ -67,7 +67,7 @@
   height: 100%;
   width: 70%;
   max-width: 300px;
-  background: white;
+  background: var(--clr-100);
   transform: translateX(-100%);
   transition: transform 0.3s ease;
   z-index: 1000;
@@ -119,7 +119,7 @@
 .cart-counter {
   position: absolute;
   top: -3px;
-  background: blue;
+  background: var(--clr-primary);
   border-radius: 5rem;
   padding: 0.1rem 0.6rem;
   font-size: 0.5rem;
@@ -130,7 +130,7 @@
 
 @media (min-width: 768px) {
   .nav__container {
-    border-bottom: 2px solid blue;
+    border-bottom: 1px solid var(--clr-500);
   }
   .nav__hamburger {
     display: none;
@@ -156,7 +156,12 @@
     align-items: center;
 
     height: 100%;
-    color: inherit;
+    color: var(--clr-700);
+    font-size: 14px;
+  }
+
+  .nav__list a:hover {
+    color: var(--clr-900);
   }
 
   .nav__list a::after {
@@ -167,9 +172,9 @@
 
     height: 3px;
 
-    background-color: red;
+    background-color: var(--clr-primary-dark);
 
-    bottom: -30px;
+    bottom: -29px;
     opacity: 0;
     transform: scaleX(0);
     transform-origin: center;

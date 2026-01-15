@@ -1,6 +1,15 @@
 /* ================ VARIABLES ================== */
 :root {
-  --clr-primary: blue;
+  --clr-900: hsl(220, 13%, 13%);
+  --clr-700: hsl(219, 9%, 45%);
+  --clr-500: hsl(220, 14%, 75%);
+  --clr-200: hsl(223, 64%, 98%);
+  --clr-100: hsl(0, 0%, 100%);
+  --clr-primary: hsl(26, 100%, 55%);
+  --clr-primary-dark: hsl(25, 97%, 53%);
+  --clr-primary-light: hsl(26, 100%, 94%);
+
+  --ff-sans: "Kumbh Sans", sans-serif;
 
   --max-width: 1280px;
   --page-padding: clamp(1rem, 8vw, 10rem);
@@ -30,6 +39,14 @@ a {
   text-decoration: none;
 }
 
+body {
+  font-family: var(--ff-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--clr-700);
+  background: var(--clr-100);
+}
+
 button {
   border: none;
   background: none;
@@ -42,4 +59,34 @@ button {
   max-width: 1200px;
   padding-inline: var(--page-padding);
   margin-inline: auto;
+}
+
+.btn {
+  background: var(--clr-primary);
+  color: var(--clr-900);
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+
+.congrats-modal {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--clr-primary-light);
+  color: var(--clr-900);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  font-weight: 700;
+  z-index: 1000;
+  width: 60%;
+
+  display: grid;
+  place-items: center;
 }

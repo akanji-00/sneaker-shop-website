@@ -7,6 +7,7 @@ import CartModal from "./components/Cart/CartModal";
 export default function App() {
   const [cartQty, setCartQty] = useState(0);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [showCongrats, setShowCongrats] = useState(false);
 
   function addToCart(qty) {
     if (qty === 0) return;
@@ -16,6 +17,11 @@ export default function App() {
   function clearCart() {
     setCartQty(0);
     setIsCartOpen(false);
+    setShowCongrats(true);
+
+    setTimeout(() => {
+      setShowCongrats(false);
+    }, 3000);
   }
 
   const cartModal = (
@@ -36,6 +42,10 @@ export default function App() {
       />
 
       <Hero onAddToCart={addToCart} />
+
+      {showCongrats && (
+        <div className="congrats-modal">🎉 Purchase successful!</div>
+      )}
     </>
   );
 }
