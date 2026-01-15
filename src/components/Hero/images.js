@@ -1,8 +1,11 @@
-const images = [
+export default [
   {
     id: 1,
-    src: "../../assets/images/image-product-1.jpg",
+    img: [
+        src: "../../assets/images/image-product-1.jpg",
     alt: "First image",
+    ]
+    
   },
   {
     id: 2,
@@ -20,5 +23,3 @@ const images = [
     alt: "First image",
   },
 ];
-
-export default images;
