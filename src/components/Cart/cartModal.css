@@ -48,6 +48,10 @@
   line-height: 1.4;
 }
 
+.cart__text-content p {
+  color: var(--clr-900);
+}
+
 .checkout__btn {
   width: 90%;
   margin-block: 2rem;
